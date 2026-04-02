@@ -43,13 +43,14 @@ graph TD
 
 ### Option 1: Claude Code Plugin (recommended)
 
-Install from the plugin marketplace inside Claude Code:
+In Claude Code, run:
 
 ```
-/plugin install human
+/plugin marketplace add tsengtinghan/human.md
+/plugin install human@human-md
 ```
 
-This installs the plugin globally — `/human` is available in all your projects.
+This installs the plugin globally — `/human:human` is available in all your projects.
 
 ### Option 2: npx (standalone)
 
@@ -57,24 +58,37 @@ This installs the plugin globally — `/human` is available in all your projects
 npx human.md
 ```
 
-Run this in your project root. It copies the skill into `.claude/skills/human/` — useful if you don't want a global plugin or want to commit the skill to your repo.
+Run this in your project root. It copies the skill into `.claude/skills/human/` so you can use `/human` without the plugin namespace. Useful if you want to commit the skill to your repo.
 
 ## Usage
 
-### Automatic
-Just build features as normal. After major changes (new routes, schema changes, integrations, structural refactors), Claude will automatically update your docs and open them in the browser.
-
-### Manual
+### First run
 
 ```
 /human:human
 ```
-Generates a full project overview on first use, or updates it based on recent changes.
+
+On first use, it scans your entire project and generates a full `human/index.html` with architecture diagrams, user flows, and plain-English explanations. It opens automatically in your browser.
+
+### After making changes
+
+```
+/human:human
+```
+
+On subsequent runs, it only looks at what changed since the last update — no full rescan. It updates the affected sections and adds a "What Changed" entry.
+
+### Focus on a specific area
 
 ```
 /human:human auth flow
 ```
-Updates just the auth flow section.
+
+Updates just the section for a specific area (e.g. auth, payments, database schema).
+
+### Automatic
+
+Claude will also auto-trigger updates after major structural changes (new routes, schema changes, integrations, significant refactors).
 
 > **Note:** If you installed via `npx` (standalone), use `/human` instead of `/human:human`.
 
