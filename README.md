@@ -96,12 +96,6 @@ AI is great at building. Humans are great at deciding *what* to build. But that 
 
 **human.md** is based on a simple idea: the human should always have a clear mental model of their project, even if AI wrote every line of code. Not because they need to read the code — but because they need to *own* the product.
 
-This means:
-- **Involve, don't inform.** The docs should make you feel like you understand your project, not like you're reading someone else's.
-- **Show, don't tell.** Diagrams over descriptions. Flows over file trees.
-- **Story, not spec.** Written like you're explaining to a smart friend, not documenting for a team of engineers.
-- **Honest about trade-offs.** If something is hacky, say so. If a decision has downsides, explain them.
-
 ## License
 
 MIT
