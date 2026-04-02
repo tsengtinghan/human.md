@@ -1,6 +1,6 @@
 {
   "name": "human.md",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Keep humans in the loop. A Claude Code skill that generates visual, plain-English docs for your codebase.",
   "bin": {
     "human.md": "./bin/cli.js"
@@ -20,6 +20,7 @@
   "license": "MIT",
   "files": [
     "bin/",
-    "skills/human/SKILL.md"
+    "skills/human/SKILL.md",
+    "commands/human.md"
   ]
 }

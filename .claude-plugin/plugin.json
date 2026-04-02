@@ -1,7 +1,7 @@
 {
   "name": "human",
   "description": "Keep humans in the loop. Generates a self-contained HTML page with architecture diagrams, data flow diagrams (Mermaid JS), and plain-English explanations of your codebase — so vibe coders always understand what AI built.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Michael Tseng"
   },

@@ -11,12 +11,6 @@ description: >
   components connect or introduces a new user-facing flow, update the human/ docs.
   IMPORTANT: Always delegate the actual generation to a subagent using the Agent
   tool to avoid polluting the main conversation context.
-version: 1.0.0
-user-invokable: true
-args:
-  - name: focus
-    description: Specific area to document or update (e.g. "auth flow", "payments", "database schema"). If omitted, the full project is documented.
-    required: false
 ---
 
 # Human — Your Project, Explained
