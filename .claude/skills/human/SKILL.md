@@ -59,20 +59,28 @@ URL to get back to them anytime."
   structured or how data moves through it — new features, new routes, new
   database tables, new third-party integrations, significant refactors.
 
-## Auto-trigger vs. Manual Behavior
+## First Use vs. Updates
+
+**First use in a project (no `human/index.html` exists):**
+- The subagent scans the entire project — all source files, configs, routes,
+  schemas, integrations, dependencies
+- Generates a complete `human/index.html` from scratch covering every section
+- This is the full initial documentation for the whole project
+
+**Subsequent uses (`human/index.html` already exists):**
+- Do NOT rescan the entire project — this is wasteful
+- The caller (you) must tell the subagent exactly what code changed (files
+  modified, features added, routes changed, etc.)
+- The subagent reads the existing `human/index.html`, then reads only the
+  changed files/areas to understand the delta
+- Updates only the affected sections of the HTML and adds a "What Changed" entry
+- If a `focus` arg is provided, the subagent reads the relevant code for that
+  area and updates or creates that section
 
 **When auto-triggering after a feature change:**
-- Tell the subagent what specifically changed
-- The subagent should do a focused update — only modify affected sections
-  and add a "What Changed" entry
-- Do not rewrite sections that did not change
-
-**When invoked manually via `/human`:**
-- If `human/index.html` does not exist, tell the subagent to generate the full document
-- If it exists and no `focus` arg is provided, tell the subagent to review all
-  sections for accuracy and update anything that has drifted
-- If a `focus` arg is provided, tell the subagent to update or create the section
-  for that specific area only
+- Summarize what you just built/changed and pass that to the subagent
+- Include file paths and a description of what changed so the subagent can
+  read just those files and update the docs accordingly
 
 ## Subagent Prompt Template
 
@@ -93,17 +101,26 @@ generation for the full project"]
 documentation — focus on [area]" / "Update the documentation to reflect these
 changes: [description]"]
 
-## Step 1: Understand the Project
+## Step 1: Understand What Needs Documenting
 
-Read the codebase thoroughly before writing anything. Focus on:
+**If this is the first run (no `human/index.html` exists):**
 
-1. What does this project do? (one sentence)
-2. What are the major pieces? (frontend, backend, database, external services, etc.)
-3. How do the pieces talk to each other? (API calls, database queries, webhooks, etc.)
-4. What are the key things a user can do? (sign up, create a post, make a payment, etc.)
+Scan the entire project. Read the codebase thoroughly before writing anything.
 
-If updating an existing file, read `human/index.html` first to understand what
-is already documented.
+1. Read the project's package.json, requirements.txt, Cargo.toml, or equivalent
+   to understand dependencies and project type
+2. Use Glob to find all source files and read through the key ones — entry points,
+   route definitions, models/schemas, config files, middleware, services
+3. Map out: What does this project do? What are the major pieces? How do they
+   connect? What can users do?
+
+**If this is an update (human/index.html already exists):**
+
+Do NOT rescan the entire project. Instead:
+
+1. Read the existing `human/index.html` to understand what is already documented
+2. Read only the files/areas described in the context provided by the caller
+3. Determine which sections of the HTML need updating based on the changes
 
 ## Step 2: Write or Update human/index.html
 
