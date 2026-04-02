@@ -41,8 +41,6 @@ graph TD
 
 ## Install
 
-### Option 1: Claude Code Plugin (recommended)
-
 In Claude Code, run:
 
 ```
@@ -50,15 +48,7 @@ In Claude Code, run:
 /plugin install human@human-md
 ```
 
-This installs the plugin globally — `/human:human` is available in all your projects.
-
-### Option 2: npx (standalone)
-
-```
-npx human.md
-```
-
-Run this in your project root. It copies the skill into `.claude/skills/human/` so you can use `/human` without the plugin namespace. Useful if you want to commit the skill to your repo.
+That's it. `/human:human` is now available in all your projects.
 
 ## Usage
 
@@ -89,8 +79,6 @@ Updates just the section for a specific area (e.g. auth, payments, database sche
 ### Automatic
 
 Claude will also auto-trigger updates after major structural changes (new routes, schema changes, integrations, significant refactors).
-
-> **Note:** If you installed via `npx` (standalone), use `/human` instead of `/human:human`.
 
 ## What You Get
 
