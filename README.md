@@ -41,9 +41,23 @@ graph TD
 
 ## Install
 
+### Option 1: Claude Code Plugin (recommended)
+
+Install from the plugin marketplace inside Claude Code:
+
 ```
-/install github:tsengtinghan/human.md
+/plugin install human
 ```
+
+This installs the plugin globally — `/human` is available in all your projects.
+
+### Option 2: npx (standalone)
+
+```
+npx human.md
+```
+
+Run this in your project root. It copies the skill into `.claude/skills/human/` — useful if you don't want a global plugin or want to commit the skill to your repo.
 
 ## Usage
 
@@ -53,19 +67,16 @@ Just build features as normal. After major changes (new routes, schema changes, 
 ### Manual
 
 ```
-/human
+/human:human
 ```
-Generates a full project overview (or refreshes an existing one).
+Generates a full project overview on first use, or updates it based on recent changes.
 
 ```
-/human auth flow
+/human:human auth flow
 ```
 Updates just the auth flow section.
 
-```
-/human payments
-```
-Updates just the payments section.
+> **Note:** If you installed via `npx` (standalone), use `/human` instead of `/human:human`.
 
 ## What You Get
 

@@ -1,0 +1,25 @@
+{
+  "name": "human.md",
+  "version": "1.0.0",
+  "description": "Keep humans in the loop. A Claude Code skill that generates visual, plain-English docs for your codebase.",
+  "bin": {
+    "human.md": "./bin/cli.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "documentation",
+    "ai",
+    "mermaid",
+    "architecture"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsengtinghan/human.md"
+  },
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "skills/human/SKILL.md"
+  ]
+}

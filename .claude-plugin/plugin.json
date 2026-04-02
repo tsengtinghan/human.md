@@ -1,6 +1,11 @@
 {
   "name": "human",
   "description": "Keep humans in the loop. Generates a self-contained HTML page with architecture diagrams, data flow diagrams (Mermaid JS), and plain-English explanations of your codebase — so vibe coders always understand what AI built.",
-  "version": "1.0.0",
-  "skills": "./.claude/skills"
+  "version": "1.0.1",
+  "author": {
+    "name": "Michael Tseng"
+  },
+  "repository": "https://github.com/tsengtinghan/human.md",
+  "license": "MIT",
+  "keywords": ["documentation", "architecture", "mermaid", "diagrams", "vibe-coding"]
 }
