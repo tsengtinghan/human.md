@@ -1,0 +1,16 @@
+{
+  "name": "human-md",
+  "owner": {
+    "name": "Michael Tseng"
+  },
+  "metadata": {
+    "description": "Keep humans in the loop — visual, plain-English docs for your codebase"
+  },
+  "plugins": [
+    {
+      "name": "human",
+      "source": ".",
+      "description": "Generates a self-contained HTML page with architecture diagrams and plain-English explanations of your codebase"
+    }
+  ]
+}
