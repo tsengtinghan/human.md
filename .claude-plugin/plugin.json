@@ -8,5 +8,5 @@
   "repository": "https://github.com/tsengtinghan/human.md",
   "license": "MIT",
   "keywords": ["documentation", "architecture", "mermaid", "diagrams", "vibe-coding"],
-  "skills": "./.claude/skills"
+  "skills": "./skills"
 }
